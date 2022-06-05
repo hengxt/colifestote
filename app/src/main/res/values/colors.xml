@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="themeGreen">#35AC76</color>
+    <color name="themeGray">#656766</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+    <color name="transparent">#00000000</color>
+
+    <color name="addSelectedColor">#ED5959</color>
+
+    <color name="system_neutral1_1000">#D6C8C8</color>
+    <color name="system_neutral1_900">#D6C8C8</color>
+    <color name="system_neutral1_800">#D6C8C8</color>
+    <color name="system_neutral1_700">#D6C8C8</color>
+    <color name="system_neutral1_600">#D6C8C8</color>
+    <color name="system_neutral1_500">#D6C8C8</color>
+    <color name="system_neutral1_400">#D6C8C8</color>
+    <color name="system_neutral1_300">#D6C8C8</color>
+    <color name="system_neutral1_200">#D6C8C8</color>
+    <color name="system_neutral1_100">#D6C8C8</color>
+    <color name="system_neutral1_50">#D6C8C8</color>
+    <color name="system_neutral1_10">#D6C8C8</color>
+    <color name="system_neutral1_0">#D6C8C8</color>
+    <color name="system_neutral2_1000">#D6C8C8</color>
+    <color name="system_neutral2_900">#D6C8C8</color>
+    <color name="system_neutral2_800">#D6C8C8</color>
+    <color name="system_neutral2_700">#D6C8C8</color>
+    <color name="system_neutral2_600">#D6C8C8</color>
+    <color name="system_neutral2_500">#D6C8C8</color>
+    <color name="system_neutral2_0">#D6C8C8</color>
+</resources>

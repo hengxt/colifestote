@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.colifestote.ui.state.AddViewModel" />
+
+        <variable
+            name="click"
+            type="com.example.colifestote.ui.page.AddFragment.ClickProxy" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/add_back"
+        tools:context=".ui.page.AddFragment">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-20dp"
+            android:minHeight="200dp"
+            android:orientation="vertical"
+            app:cardCornerRadius="20sp"
+            app:cardElevation="10dp"
+            app:contentPadding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btn_close"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:onClick="@{()->click.back()}"
+                android:src="@drawable/ic_close"
+                tools:ignore="RtlHardcoded" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/cardView">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/btn_todo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        switchImg = "true"
+                        android:background="@color/transparent"
+                        android:onClick="@{()->click.addTodo()}"
+                        android:src="@drawable/ic_todo"
+                        pos="0"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/todoName" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/btn_diary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        switchImg = "true"
+                        android:background="@color/transparent"
+                        android:onClick="@{()->click.addDiary()}"
+                        android:src="@drawable/ic_diary"
+                        pos="1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/dairyName" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/btn_aBook"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        switchImg = "true"
+                        android:background="@color/transparent"
+                        android:onClick="@{()->click.addABook()}"
+                        android:src="@drawable/ic_abook"
+                        pos="2"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/aBookName" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/btn_hole"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        switchImg = "true"
+                        android:background="@color/transparent"
+                        android:onClick="@{()->click.addHole()}"
+                        android:src="@drawable/ic_hole"
+                        pos="3"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/holeName" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            setAnimal="@{vm.animal}"
+            android:layout_width="match_parent"
+            android:layout_height="488dp"
+            android:alpha="0.98"
+            app:cardCornerRadius="20sp"
+            app:cardElevation="10dp"
+            app:contentPadding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+<!--            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />-->
+
+            <fragment
+                android:id="@+id/cardFragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                android:fitsSystemWindows="true"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_card" />
+
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

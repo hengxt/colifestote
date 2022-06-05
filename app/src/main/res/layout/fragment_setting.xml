@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.colifestote.ui.state.SettingViewModel" />
+
+        <variable
+            name="click"
+            type="com.example.colifestote.ui.page.SettingFragment.ClickProxy" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.page.AboutFragment">
+
+
+        <View
+            android:id="@+id/top"
+            android:layout_width="411dp"
+            android:layout_height="60dp"
+            android:background="#b0d5fc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="48dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#b0d5fc"
+            android:onClick="@{()->click.back()}"
+            android:src="@drawable/ic_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/top" />
+
+
+        <LinearLayout
+            android:id="@+id/line2"
+            android:layout_width="409dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="44dp"
+            android:orientation="vertical"
+            android:paddingEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:alpha="100"
+                android:background="#50A62B"
+                android:clickable="false"
+                android:gravity="center"
+                android:insetLeft="20dp"
+                android:insetRight="20dp"
+                android:paddingStart="10dp"
+                android:rotation="0"
+                android:rotationX="0"
+                android:text="基本信息"
+                android:textSize="26sp"
+                app:iconPadding="-200dp" />
+
+            <Button
+                android:id="@+id/btn_statistics"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:alpha="100"
+                android:clickable="false"
+                android:insetLeft="20dp"
+                android:insetRight="20dp"
+                android:rotation="0"
+                android:rotationX="0"
+                android:text="重置用户信息"
+                android:textSize="20sp"
+                app:iconPadding="-200dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line1"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:orientation="vertical"
+            android:paddingEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:alpha="100"
+                android:background="#50A62B"
+                android:clickable="false"
+                android:gravity="center"
+                android:insetLeft="20dp"
+                android:insetRight="20dp"
+                android:paddingStart="10dp"
+                android:rotation="0"
+                android:rotationX="0"
+                android:text="通用"
+                android:textSize="26sp"
+                app:iconPadding="-200dp" />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:paddingStart="50dp"
+                android:text="暗黑模式（默认白天）"
+                android:textColor="#888C8A"
+                android:textSize="20sp"
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                tools:layout_editor_absoluteX="188dp"
+                tools:layout_editor_absoluteY="352dp" />
+
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:paddingStart="50dp"
+                android:text="中英切换（默认中文）"
+                android:textColor="#888C8A"
+                android:textSize="20sp"
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                tools:layout_editor_absoluteX="188dp"
+                tools:layout_editor_absoluteY="352dp" />
+
+            <Switch
+                android:id="@+id/switch3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:paddingStart="50dp"
+                android:text="清空数据库"
+                android:textColor="#888C8A"
+                android:textSize="20sp"
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                tools:layout_editor_absoluteX="188dp"
+                tools:layout_editor_absoluteY="352dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="50dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="字体大小"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="20dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line3"
+            android:layout_width="409dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="44dp"
+            android:orientation="vertical"
+            android:paddingEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:alpha="100"
+                android:background="#50A62B"
+                android:clickable="false"
+                android:gravity="center"
+                android:insetLeft="20dp"
+                android:insetRight="20dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="50dp"
+                android:rotation="0"
+                android:rotationX="0"
+                android:text="其他"
+                android:textSize="26sp"
+                app:iconPadding="-200dp" />
+
+            <Button
+                android:id="@+id/btn_update"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:alpha="100"
+                android:clickable="false"
+                android:insetLeft="20dp"
+                android:insetRight="20dp"
+                android:rotation="0"
+                android:rotationX="0"
+                android:text="检查更新"
+                android:textSize="20sp"
+                app:iconPadding="-200dp" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

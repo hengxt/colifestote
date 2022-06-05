@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="todoItem"
+            type="com.example.colifestote.data.bean.TodoItem" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:button="@drawable/selector_checkbox"
+            android:checked="@{todoItem.checked}"
+            android:layoutDirection="rtl"
+            android:text="@{todoItem.content}"
+            android:padding="10dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp"
+            android:textDirection="ltr" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.colifestote.ui.state.MineViewModel" />
+
+        <variable
+            name="click"
+            type="com.example.colifestote.ui.page.MineFragment.ClickProxy" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text=" 昵称 | 积分"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="116dp"
+            android:layout_height="101dp"
+            android:layout_marginTop="28dp"
+            android:src="@mipmap/home_banner_01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+        <LinearLayout
+            android:id="@+id/line2"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <Button
+                android:id="@+id/btn_statistics"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:alpha="100"
+                android:insetLeft="20dp"
+                android:insetRight="20dp"
+                android:rotation="0"
+                android:rotationX="0"
+                android:onClick="@{()->click.statistics()}"
+                android:text="统计"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_xitou"
+                app:iconPadding="-200dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="203dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/line1"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line2">
+
+            <Button
+                android:id="@+id/btn_todo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:alpha="100"
+                android:insetLeft="20dp"
+                android:insetRight="20dp"
+                android:rotation="0"
+                android:rotationX="0"
+                android:text="待办"
+                android:onClick="@{()->click.todo()}"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_xitou"
+                app:iconPadding="-200dp" />
+
+            <Button
+                android:id="@+id/btn_aBook"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:alpha="100"
+                android:insetLeft="20dp"
+                android:insetRight="20dp"
+                android:rotation="0"
+                android:rotationX="0"
+                android:text="账本"
+                android:onClick="@{()->click.aBook()}"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_xitou"
+                app:iconPadding="-200dp" />
+
+            <Button
+                android:id="@+id/btn_diary"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:alpha="100"
+                android:insetLeft="20dp"
+                android:insetRight="20dp"
+                android:rotation="0"
+                android:rotationX="0"
+                android:text="日记"
+                android:onClick="@{()->click.diary()}"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_xitou"
+                app:iconPadding="-200dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/btn_about"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:insetLeft="20dp"
+                android:insetRight="20dp"
+                android:rotation="0"
+                android:rotationX="0"
+                android:text="关于"
+                android:onClick="@{()->click.about()}"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_xitou"
+                app:iconPadding="-200dp" />
+
+            <Button
+                android:id="@+id/btn_setting"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:insetLeft="20dp"
+                android:insetRight="20dp"
+                android:rotation="0"
+                android:rotationX="0"
+                android:text="设置"
+                android:onClick="@{()->click.setting()}"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_xitou"
+                app:iconPadding="-200dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

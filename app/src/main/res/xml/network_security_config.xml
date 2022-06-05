@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:tools="http://schemas.android.com/tools">
+    <base-config
+        cleartextTrafficPermitted="true"
+        tools:ignore="InsecureBaseConfiguration" />
+    <!--  默认配置，是否开启Http流量允许-->
+    <!--  特例配置，配置某个域名是否开启Http流量允许-->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <domain includeSubdomains="true">59.110.106.180</domain>
+
+    </domain-config>
+
+</network-security-config>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_drawer.xml"
+    app:startDestination="@id/mineFragment">
+
+    <fragment
+        android:id="@+id/mineFragment"
+        android:name="com.example.colifestote.ui.page.MineFragment"
+        android:label="MineFragment" >
+        <action
+            android:id="@+id/action_mineFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_mineFragment_to_statisticsActivity"
+            app:destination="@id/statisticsActivity" />
+        <action
+            android:id="@+id/action_mineFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.colifestote.ui.page.AboutFragment"
+        android:label="AboutFragment" />
+    <activity
+        android:id="@+id/statisticsActivity"
+        android:name="com.example.colifestote.ui.page.StatisticsActivity"
+        android:label="activity_statistics"
+        tools:layout="@layout/activity_statistics" >
+        <argument
+            android:name="statistics"
+            app:argType="string"
+            android:defaultValue="todo" />
+    </activity>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.colifestote.ui.page.SettingFragment"
+        android:label="SettingFragment" />
+
+
+</navigation>

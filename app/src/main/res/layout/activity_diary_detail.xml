@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.colifestote.ui.state.DiaryDetailActivityViewModel" />
+        <variable
+            name="click"
+            type="com.example.colifestote.ui.page.DiaryDetailActivity.ClickProxy" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.page.AddHoleFragment">
+
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:inputType="date"
+            android:text="@={vm.diaryLiveData.date}"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="日期:"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editTextDate"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="主题:"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextTextMultiLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editTextTextMultiLine"
+            app:layout_constraintVertical_bias="0.533" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:text="@={vm.diaryLiveData.theme}"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="天气:"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatSpinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appCompatSpinner"
+            app:layout_constraintVertical_bias="0.533" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/appCompatSpinner"
+            setWeather="@{vm.diaryLiveData}"
+            android:layout_width="100dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:entries="@array/weather"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="24dp"
+            android:gravity="center"
+            android:text="心情:"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatSpinner2"
+            app:layout_constraintStart_toEndOf="@+id/appCompatSpinner"
+            app:layout_constraintTop_toTopOf="@+id/appCompatSpinner2"
+            app:layout_constraintVertical_bias="0.4" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/appCompatSpinner2"
+            setMood="@{vm.diaryLiveData}"
+            android:layout_width="101dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:entries="@array/mood"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.653"
+            app:layout_constraintStart_toEndOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:ems="20"
+            android:enabled="true"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:minLines="10"
+            android:scrollbars="vertical"
+            android:text="@={vm.diaryLiveData.content}"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.526"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatSpinner2" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/appCompatImageButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="56dp"
+            android:background="#41AE8E"
+            android:src="@drawable/ic_submit"
+            android:onClick="@{()->click.save()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/button"
+            android:layout_width="84dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="204dp"
+            android:onClick="@{()->click.openDatePicker()}"
+            android:background="@color/transparent"
+            android:src="@drawable/ic_date_picker"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextDate"
+            app:layout_constraintStart_toStartOf="@+id/editTextDate"
+            app:layout_constraintTop_toTopOf="@+id/editTextDate"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

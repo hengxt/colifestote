@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_card"
+    app:startDestination="@id/addBaseFragment">
+    <fragment
+        android:id="@+id/addBaseFragment"
+        android:name="com.example.colifestote.ui.page.AddBaseFragment"
+        android:label="AddBaseFragment" >
+        <action
+            android:id="@+id/action_addBaseFragment_to_addTodoFragment"
+            app:destination="@id/addTodoFragment" />
+        <action
+            android:id="@+id/action_addBaseFragment_to_addDiaryFragment"
+            app:destination="@id/addDiaryFragment" />
+        <action
+            android:id="@+id/action_addBaseFragment_to_addAbookFragment"
+            app:destination="@id/addAbookFragment" />
+        <action
+            android:id="@+id/action_addBaseFragment_to_addHoleFragment"
+            app:destination="@id/addHoleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTodoFragment"
+        android:name="com.example.colifestote.ui.page.AddTodoFragment"
+        android:label="AddTodoFragment" />
+    <fragment
+        android:id="@+id/addAbookFragment"
+        android:name="com.example.colifestote.ui.page.AddAbookFragment"
+        android:label="AddAbookFragment" />
+    <fragment
+        android:id="@+id/addDiaryFragment"
+        android:name="com.example.colifestote.ui.page.AddDiaryFragment"
+        android:label="AddDiaryFragment" />
+    <fragment
+        android:id="@+id/addHoleFragment"
+        android:name="com.example.colifestote.ui.page.AddHoleFragment"
+        android:label="AddHoleFragment" />
+</navigation>

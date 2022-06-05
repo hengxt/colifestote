@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="spinner_values">
+        <item>淘宝</item>
+        <item>京东</item>
+        <item>转账</item>
+        <item>购物车</item>
+        <item>剪头发</item>
+    </array>
+    
+    <array name="weather">
+        <item>晴朗</item>
+        <item>雨</item>
+        <item>多云</item>
+    </array>
+
+    <array name="mood">
+        <item>开心</item>
+        <item>伤心</item>
+        <item>平静</item>
+    </array>
+
+
+    <array name="date">
+        <item>2020/12</item>
+        <item>2021/2</item>
+        <item>2022/4</item>
+    </array>
+
+</resources>
